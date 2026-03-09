@@ -1,0 +1,372 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap');
+
+/* Global Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Pretendard', sans-serif;
+    background-color: #0f172a;
+    /* Dark theme base */
+    color: #f8fafc;
+    overflow: hidden;
+}
+
+/* Cesium Container */
+#cesiumContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Glassmorphism UI Container */
+#uiContainer {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 420px;
+    max-height: calc(100vh - 40px);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 20px;
+
+    /* Premium Glass Effect */
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+
+    color: white;
+    overflow-y: auto;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scrollbar styling for the UI container */
+#uiContainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+#uiContainer::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#uiContainer::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+/* Typography & Headers */
+h1#tourMainTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+}
+
+p#tourMainDesc {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+/* Active Node Information */
+.chapter-info {
+    position: relative;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 24px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.node-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.badge-SPACE {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.badge-TIME {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+}
+
+.badge-PERSON {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+}
+
+.badge-CULTURE {
+    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    color: white;
+}
+
+h2#chapterTitle {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 12px;
+    color: #f8fafc;
+}
+
+p#chapterDesc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+/* Ontology Graph Section */
+.controls-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.filter-header {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: -8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.filter-toggles {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
+}
+
+.filter-btn.active {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: rgba(56, 189, 248, 0.5);
+    color: #38bdf8;
+}
+
+/* Graph Container */
+#graphContainer {
+    width: 100%;
+    height: 220px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+#networkGraph {
+    width: 100%;
+    height: 100%;
+}
+
+/* SVG Elements Styling */
+.link {
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 1.5;
+    transition: stroke 0.3s ease;
+}
+
+.link.highlight {
+    stroke: rgba(56, 189, 248, 0.6);
+    stroke-width: 2;
+}
+
+.node-group {
+    cursor: pointer;
+}
+
+.node-group:hover .node-circle {
+    transform: scale(1.15);
+}
+
+.node-circle {
+    stroke: rgba(255, 255, 255, 0.8);
+    stroke-width: 2;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.node-group.center .node-circle {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+    stroke-width: 3;
+}
+
+.node-label {
+    fill: #e2e8f0;
+    font-size: 10px;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    pointer-events: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.link-label {
+    fill: #94a3b8;
+    font-size: 9px;
+    font-family: 'Pretendard', sans-serif;
+    text-anchor: middle;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Auto-Play Controls */
+.play-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.auto-play-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #e2e8f0;
+}
+
+/* Toggle Switch Styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: .4s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #94a3b8;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: rgba(56, 189, 248, 0.3);
+    border-color: #38bdf8;
+}
+
+input:checked+.slider:before {
+    transform: translateX(20px);
+    background-color: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+}
+
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: -8px;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    transition: width 0.1s linear;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cesium Customization overrides to hide default UI elements not caught via JS options */
+.cesium-viewer-bottom {
+    display: none !important;
+}

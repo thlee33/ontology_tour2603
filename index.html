@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatiotemporal Ontology Story Map</title>
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/v2_addons.css">
+</head>
+
+<body>
+
+    <div id="cesiumContainer"></div>
+
+    <div id="uiContainer" class="glass-panel">
+        <h1 id="tourMainTitle">Loading...</h1>
+        <p id="tourMainDesc"></p>
+
+        <!-- V2 Features -->
+        <div class="v2-controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="nodeSearchInput" placeholder="공간, 인물, 시간 검색 (예: 루브르, 1900)...">
+                <div id="searchResults" class="search-results hidden"></div>
+            </div>
+            <button id="luckyRandomBtn" class="lucky-btn">
+                <i class="fas fa-dice"></i> 새로운 발견!
+            </button>
+        </div>
+
+        <div class="chapter-info">
+            <div class="node-badge" id="nodeTypeBadge">SPACE</div>
+            <h2 id="chapterTitle"></h2>
+            <p id="chapterDesc"></p>
+        </div>
+
+        <div class="controls-container">
+            <div class="filter-header">연관 정보 필터 (Ontology Filter)</div>
+            <div class="filter-toggles">
+                <button class="filter-btn active" data-type="ALL">All</button>
+                <button class="filter-btn" data-type="TIME"><i class="fas fa-clock"></i> Time</button>
+                <button class="filter-btn" data-type="SPACE"><i class="fas fa-map-marker-alt"></i> Space</button>
+                <button class="filter-btn" data-type="PERSON"><i class="fas fa-user"></i> Person</button>
+                <button class="filter-btn" data-type="CULTURE"><i class="fas fa-landmark"></i> Culture</button>
+            </div>
+
+            <div id="graphContainer">
+                <!-- SVG Network Graph will be drawn here -->
+                <svg id="networkGraph" width="100%" height="220"></svg>
+            </div>
+
+            <div class="play-controls">
+                <span class="auto-play-label">Auto Explorer (자동 탐색):</span>
+                <label class="switch">
+                    <input type="checkbox" id="autoPlayToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="progress-container">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- D3.js utilized for simple graph layout calculations if needed, but we'll manually draw SVG in vanilla JS to minimize dependencies and maximize custom styling control -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

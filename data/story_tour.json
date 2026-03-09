@@ -1,0 +1,721 @@
+{
+    "title": "시공간 온톨로지 투어",
+    "description": "에펠탑을 중심으로 인물, 시간, 공간, 문화적 관계망을 탐험하는 네트워크 스트리맵",
+    "nodes": [
+        {
+            "id": "paris_eiffel",
+            "title": "에펠탑 (Eiffel Tower)",
+            "type": "SPACE",
+            "description": "1889년 파리 만국박람회를 기념하여 센 강변 상 드 마르스 광장에 세워진 철골탑. 건설 당시에는 추악한 철골 구조물이라는 비난을 받았으나, 현재는 파리의 가장 상징적인 랜드마크가 되었습니다.",
+            "location": {
+                "lng": 2.2945,
+                "lat": 48.8584,
+                "height": 300
+            },
+            "camera": {
+                "heading": 0,
+                "pitch": -25,
+                "range": 800
+            },
+            "behavior": {
+                "flyDuration": 4,
+                "stayDuration": 15,
+                "rotationSpeed": -0.5
+            },
+            "connections": [
+                {
+                    "targetId": "gustave_eiffel",
+                    "type": "PERSON",
+                    "label": "설계 및 시공 책임자"
+                },
+                {
+                    "targetId": "expo_1889",
+                    "type": "TIME",
+                    "label": "건축 계기 (만국박람회)"
+                },
+                {
+                    "targetId": "champ_de_mars",
+                    "type": "SPACE",
+                    "label": "위치한 공간"
+                },
+                {
+                    "targetId": "trocadero",
+                    "type": "SPACE",
+                    "label": "마주보는 랜드마크"
+                },
+                {
+                    "targetId": "artists_protest",
+                    "type": "CULTURE",
+                    "label": "건립 반대 운동"
+                },
+                {
+                    "targetId": "radio_transmission",
+                    "type": "CULTURE",
+                    "label": "존속 이유 (무선 통신)"
+                }
+            ]
+        },
+        {
+            "id": "gustave_eiffel",
+            "title": "귀스타브 에펠 (Gustave Eiffel)",
+            "type": "PERSON",
+            "description": "프랑스의 토목 엔지니어. 교량 건축의 권위자로, 에펠탑을 설계하고 감독했습니다. 철도 교량과 구조물을 전문으로 설계한 그의 철골 구조 기술은 다양한 대형 건축물에 적용되었습니다.",
+            "location": {
+                "lng": 2.3025,
+                "lat": 48.8655,
+                "height": 50
+            },
+            "camera": {
+                "heading": 90,
+                "pitch": -40,
+                "range": 600
+            },
+            "behavior": {
+                "flyDuration": 4,
+                "stayDuration": 10,
+                "rotationSpeed": 0.2
+            },
+            "connections": [
+                {
+                    "targetId": "paris_eiffel",
+                    "type": "SPACE",
+                    "label": "대표 건축물"
+                },
+                {
+                    "targetId": "statue_of_liberty",
+                    "type": "SPACE",
+                    "label": "내부 골조 설계 참여"
+                },
+                {
+                    "targetId": "garabit_viaduct",
+                    "type": "SPACE",
+                    "label": "가라비 고가교 설계"
+                }
+            ]
+        },
+        {
+            "id": "expo_1889",
+            "title": "1889년 만국 박람회",
+            "type": "TIME",
+            "description": "프랑스 대혁명 100주년을 기념하기 위해 파리에서 열린 세계 규모의 만국 박람회. 에펠탑은 이 박람회의 출입구 겸 심볼로 건설되었습니다.",
+            "location": {
+                "lng": 2.306,
+                "lat": 48.862,
+                "height": 100
+            },
+            "camera": {
+                "heading": 45,
+                "pitch": -30,
+                "range": 1200
+            },
+            "behavior": {
+                "flyDuration": 5,
+                "stayDuration": 12,
+                "rotationSpeed": -0.3
+            },
+            "connections": [
+                {
+                    "targetId": "paris_eiffel",
+                    "type": "SPACE",
+                    "label": "상징 건축물"
+                },
+                {
+                    "targetId": "expo_1900",
+                    "type": "TIME",
+                    "label": "연결된 항목"
+                },
+                {
+                    "targetId": "expo_1851",
+                    "type": "TIME",
+                    "label": "연결된 항목"
+                }
+            ]
+        },
+        {
+            "id": "champ_de_mars",
+            "title": "샹 드 마르스 (Champ de Mars)",
+            "type": "SPACE",
+            "description": "파리 7구에 위치한 대규모 공원. 원래는 군사 훈련장으로 사용되었으나 현재는 파리 시민들과 관광객의 휴식처이자 에펠탑을 가장 잘 볼 수 있는 장소입니다.",
+            "location": {
+                "lng": 2.2988,
+                "lat": 48.8556,
+                "height": 20
+            },
+            "camera": {
+                "heading": 135,
+                "pitch": -20,
+                "range": 1500
+            },
+            "behavior": {
+                "flyDuration": 4,
+                "stayDuration": 12,
+                "rotationSpeed": 0.4
+            },
+            "connections": [
+                {
+                    "targetId": "paris_eiffel",
+                    "type": "SPACE",
+                    "label": "광장 끝의 건축물"
+                },
+                {
+                    "targetId": "ecole_militaire",
+                    "type": "SPACE",
+                    "label": "반대편의 군사학교"
+                }
+            ]
+        },
+        {
+            "id": "ecole_militaire",
+            "title": "에콜 밀리테르 (École Militaire)",
+            "type": "SPACE",
+            "description": "나폴레옹이 졸업한 곳으로 유명한 군사학교. 상 드 마르스 남동쪽 끝에 자리잡고 있습니다.",
+            "location": {
+                "lng": 2.3039,
+                "lat": 48.8525,
+                "height": 30
+            },
+            "camera": {
+                "heading": 315,
+                "pitch": -25,
+                "range": 700
+            },
+            "behavior": {
+                "flyDuration": 4,
+                "stayDuration": 10,
+                "rotationSpeed": -0.2
+            },
+            "connections": [
+                {
+                    "targetId": "champ_de_mars",
+                    "type": "SPACE",
+                    "label": "앞에 펼쳐진 광장"
+                }
+            ]
+        },
+        {
+            "id": "trocadero",
+            "title": "트로카데로 광장 (Trocadéro)",
+            "type": "SPACE",
+            "description": "센 강을 사이에 두고 에펠탑과 마주보는 광장. 샤요 궁전(Palais de Chaillot)이 위치해 있으며, 에펠탑을 감상하고 촬영하는 최고의 뷰포인트로 꼽힙니다.",
+            "location": {
+                "lng": 2.2882,
+                "lat": 48.8624,
+                "height": 60
+            },
+            "camera": {
+                "heading": 120,
+                "pitch": -20,
+                "range": 800
+            },
+            "behavior": {
+                "flyDuration": 4,
+                "stayDuration": 15,
+                "rotationSpeed": 0.3
+            },
+            "connections": [
+                {
+                    "targetId": "paris_eiffel",
+                    "type": "SPACE",
+                    "label": "센 강 건너 정면"
+                }
+            ]
+        },
+        {
+            "id": "artists_protest",
+            "title": "예술가들의 반대",
+            "type": "CULTURE",
+            "description": "건설 초기, 300명의 예술가와 지식인들은 이 탑을 '쓸모없고 흉물스러운 공장 굴뚝'이라며 철거를 요구하는 탄원서를 발표했습니다. 기 드 모파상, 샤를 구노 등이 참여했습니다.",
+            "location": {
+                "lng": 2.3353,
+                "lat": 48.8606,
+                "height": 50
+            },
+            "camera": {
+                "heading": 270,
+                "pitch": -30,
+                "range": 2500
+            },
+            "behavior": {
+                "flyDuration": 5,
+                "stayDuration": 12,
+                "rotationSpeed": -0.1
+            },
+            "connections": [
+                {
+                    "targetId": "paris_eiffel",
+                    "type": "SPACE",
+                    "label": "논란의 대상"
+                }
+            ]
+        },
+        {
+            "id": "radio_transmission",
+            "title": "무선 통신탑으로의 변신",
+            "type": "CULTURE",
+            "description": "원래 20년 뒤 철거될 예정이었으나, 무선 전신 안테나로 활용되면서 군사적, 과학적 가치를 입증받아 보존되었습니다.",
+            "location": {
+                "lng": 2.2945,
+                "lat": 48.8584,
+                "height": 330
+            },
+            "camera": {
+                "heading": 45,
+                "pitch": -10,
+                "range": 400
+            },
+            "behavior": {
+                "flyDuration": 5,
+                "stayDuration": 10,
+                "rotationSpeed": 0.5
+            },
+            "connections": [
+                {
+                    "targetId": "paris_eiffel",
+                    "type": "SPACE",
+                    "label": "기능의 변화"
+                }
+            ]
+        },
+        {
+            "id": "statue_of_liberty",
+            "title": "자유의 여신상 (Statue of Liberty)",
+            "type": "SPACE",
+            "description": "미국 독립 100주년을 기념해 프랑스가 선물한 거대 동상. 외관은 조각가 바르톨디가, 강풍을 견디는 내부 철골 구조는 에펠탑을 지은 귀스타브 에펠이 설계했습니다.",
+            "location": {
+                "lng": -74.0445,
+                "lat": 40.6892,
+                "height": 60
+            },
+            "camera": {
+                "heading": 120,
+                "pitch": -20,
+                "range": 700
+            },
+            "behavior": {
+                "flyDuration": 6,
+                "stayDuration": 15,
+                "rotationSpeed": -0.4
+            },
+            "connections": [
+                {
+                    "targetId": "gustave_eiffel",
+                    "type": "PERSON",
+                    "label": "내부 골조 설계"
+                },
+                {
+                    "targetId": "ellis_island",
+                    "type": "SPACE",
+                    "label": "연결된 항목"
+                },
+                {
+                    "targetId": "empire_state",
+                    "type": "SPACE",
+                    "label": "연결된 항목"
+                }
+            ]
+        },
+        {
+            "id": "garabit_viaduct",
+            "title": "가라비 고가교 (Garabit Viaduct)",
+            "type": "SPACE",
+            "description": "귀스타브 에펠이 설계한 철도 아치 다리. 에펠탑 건설 전인 1884년에 완공되었으며, 에펠의 혁신적인 철골 응용 기술을 미리 볼 수 있는 훌륭한 사례입니다.",
+            "location": {
+                "lng": 3.177,
+                "lat": 44.977,
+                "height": 330
+            },
+            "camera": {
+                "heading": 0,
+                "pitch": -30,
+                "range": 1200
+            },
+            "behavior": {
+                "flyDuration": 6,
+                "stayDuration": 12,
+                "rotationSpeed": 0.2
+            },
+            "connections": [
+                {
+                    "targetId": "gustave_eiffel",
+                    "type": "PERSON",
+                    "label": "설계"
+                }
+            ]
+        },
+        {
+            "id": "louvre",
+            "title": "루브르 박물관 (Louvre Museum)",
+            "type": "SPACE",
+            "description": "세계 최대의 미술관이자 역사적인 궁전. 모나리자 등 방대한 예술품을 소장하고 있으며, 에펠탑과 함께 파리의 핵심 랜드마크입니다.",
+            "location": {
+                "lng": 2.3376,
+                "lat": 48.8606,
+                "height": 40
+            },
+            "camera": {
+                "heading": 90,
+                "pitch": -30,
+                "range": 1000
+            },
+            "connections": [
+                {
+                    "targetId": "paris_eiffel",
+                    "type": "SPACE",
+                    "label": "파리의 핵심 랜드마크"
+                },
+                {
+                    "targetId": "arc_de_triomphe",
+                    "type": "SPACE",
+                    "label": "역사적 축선 (Axial Line)"
+                }
+            ]
+        },
+        {
+            "id": "arc_de_triomphe",
+            "title": "개선문 (Arc de Triomphe)",
+            "type": "SPACE",
+            "description": "나폴레옹 1세가 아우스터리츠 전투 승리를 기념하여 세운 거대한 기념건축물. 샹젤리제 거리의 서쪽 끝에 위치합니다.",
+            "location": {
+                "lng": 2.295,
+                "lat": 48.8738,
+                "height": 50
+            },
+            "camera": {
+                "heading": 120,
+                "pitch": -25,
+                "range": 600
+            },
+            "connections": [
+                {
+                    "targetId": "paris_eiffel",
+                    "type": "SPACE",
+                    "label": "도시 파노라마 공유"
+                },
+                {
+                    "targetId": "louvre",
+                    "type": "SPACE",
+                    "label": "역사적 축선"
+                }
+            ]
+        },
+        {
+            "id": "expo_1900",
+            "title": "1900년 파리 박람회",
+            "type": "TIME",
+            "description": "20세기를 맞이하며 파리에서 열린 세계 박람회. 이 때 알렉상드르 3세 다리가 지어졌으며, 대한제국도 참가하여 독립국의 지위를 전 세계에 알렸습니다.",
+            "location": {
+                "lng": 2.313,
+                "lat": 48.863,
+                "height": 100
+            },
+            "camera": {
+                "heading": 45,
+                "pitch": -30,
+                "range": 1200
+            },
+            "connections": [
+                {
+                    "targetId": "expo_1889",
+                    "type": "TIME",
+                    "label": "이전 박람회"
+                },
+                {
+                    "targetId": "paris_eiffel",
+                    "type": "SPACE",
+                    "label": "행사장 인근"
+                },
+                {
+                    "targetId": "korean_pavilion_1900",
+                    "type": "CULTURE",
+                    "label": "대한제국 전시관"
+                }
+            ]
+        },
+        {
+            "id": "korean_pavilion_1900",
+            "title": "1900년 파리 박람회 대한제국관",
+            "type": "CULTURE",
+            "description": "1900년 파리 만국박람회에 참가한 대한제국 전시관. 경복궁 근정전을 모티브로 한 거대한 목조 건축물로 지어져 큰 관심을 받았습니다.",
+            "location": {
+                "lng": 2.296,
+                "lat": 48.86,
+                "height": 35
+            },
+            "camera": {
+                "heading": 180,
+                "pitch": -20,
+                "range": 400
+            },
+            "connections": [
+                {
+                    "targetId": "expo_1900",
+                    "type": "TIME",
+                    "label": "행사 무대"
+                },
+                {
+                    "targetId": "gyeongbokgung",
+                    "type": "SPACE",
+                    "label": "건축 모티브"
+                }
+            ]
+        },
+        {
+            "id": "gyeongbokgung",
+            "title": "경복궁 (Gyeongbokgung Palace)",
+            "type": "SPACE",
+            "description": "조선 왕조의 법궁. 1395년 태조 이성계가 창건하였으며, 1900년 파리 박람회 대한제국관의 디자인 모티브가 되었습니다.",
+            "location": {
+                "lng": 126.977,
+                "lat": 37.5796,
+                "height": 35
+            },
+            "camera": {
+                "heading": 0,
+                "pitch": -30,
+                "range": 800
+            },
+            "connections": [
+                {
+                    "targetId": "korean_pavilion_1900",
+                    "type": "CULTURE",
+                    "label": "디자인 영감 제공"
+                },
+                {
+                    "targetId": "seoul_tower",
+                    "type": "SPACE",
+                    "label": "서울의 또다른 랜드마크"
+                }
+            ]
+        },
+        {
+            "id": "seoul_tower",
+            "title": "N서울타워 (N Seoul Tower)",
+            "type": "SPACE",
+            "description": "남산 정상에 세워진 통신탑이자 서울의 랜드마크. 에펠탑처럼 원래는 방송용 송신탑으로 만들어졌으나 지금은 대표적인 관광 명소입니다.",
+            "location": {
+                "lng": 126.9882,
+                "lat": 37.5512,
+                "height": 262
+            },
+            "camera": {
+                "heading": 90,
+                "pitch": -20,
+                "range": 600
+            },
+            "connections": [
+                {
+                    "targetId": "paris_eiffel",
+                    "type": "SPACE",
+                    "label": "유사한 통신 타워 기원"
+                },
+                {
+                    "targetId": "gyeongbokgung",
+                    "type": "SPACE",
+                    "label": "서울 시내 조망"
+                }
+            ]
+        },
+        {
+            "id": "ellis_island",
+            "title": "엘리스 섬 (Ellis Island)",
+            "type": "SPACE",
+            "description": "미국 초기 이민자들의 관문이었던 섬. 자유의 여신상 인근에 위치하며, 여신상을 보며 아메리칸 드림을 꿈꾸던 이민자들의 역사가 담겨 있습니다.",
+            "location": {
+                "lng": -74.04,
+                "lat": 40.6995,
+                "height": 10
+            },
+            "camera": {
+                "heading": 180,
+                "pitch": -25,
+                "range": 1000
+            },
+            "connections": [
+                {
+                    "targetId": "statue_of_liberty",
+                    "type": "SPACE",
+                    "label": "이민자들의 시선"
+                },
+                {
+                    "targetId": "central_park",
+                    "type": "SPACE",
+                    "label": "뉴욕의 다른 상징"
+                }
+            ]
+        },
+        {
+            "id": "central_park",
+            "title": "센트럴 파크 (Central Park)",
+            "type": "SPACE",
+            "description": "미국 뉴욕 맨해튼 중심에 있는 거대한 도시 공원. 세계에서 가장 유명한 도심 공원 중 하나입니다.",
+            "location": {
+                "lng": -73.9654,
+                "lat": 40.7829,
+                "height": 20
+            },
+            "camera": {
+                "heading": 0,
+                "pitch": -30,
+                "range": 2000
+            },
+            "connections": [
+                {
+                    "targetId": "empire_state",
+                    "type": "SPACE",
+                    "label": "맨해튼 스카이라인"
+                },
+                {
+                    "targetId": "ellis_island",
+                    "type": "SPACE",
+                    "label": "뉴욕의 공간"
+                }
+            ]
+        },
+        {
+            "id": "empire_state",
+            "title": "엠파이어 스테이트 빌딩 (Empire State Building)",
+            "type": "SPACE",
+            "description": "뉴욕 맨해튼에 위치한 아르데코 양식의 상징적인 마천루. 한때 세계에서 가장 높은 건물이었습니다.",
+            "location": {
+                "lng": -73.9857,
+                "lat": 40.7484,
+                "height": 400
+            },
+            "camera": {
+                "heading": 90,
+                "pitch": -20,
+                "range": 1000
+            },
+            "connections": [
+                {
+                    "targetId": "statue_of_liberty",
+                    "type": "SPACE",
+                    "label": "뉴욕의 상징 공유"
+                },
+                {
+                    "targetId": "central_park",
+                    "type": "SPACE",
+                    "label": "도시 공원 조망"
+                }
+            ]
+        },
+        {
+            "id": "expo_1851",
+            "title": "1851년 런던 세계 박람회",
+            "type": "TIME",
+            "description": "세계 최초의 만국 박람회. 하이드 파크에 세워진 철과 유리로 된 거대한 온실 모양의 크리스털 팰리스(수정궁)에서 열렸으며, 이는 에펠탑 건설에도 영감을 주었습니다.",
+            "location": {
+                "lng": -0.1657,
+                "lat": 51.5033,
+                "height": 20
+            },
+            "camera": {
+                "heading": 0,
+                "pitch": -25,
+                "range": 600
+            },
+            "connections": [
+                {
+                    "targetId": "expo_1889",
+                    "type": "TIME",
+                    "label": "후대의 파리 박람회에 영감"
+                },
+                {
+                    "targetId": "crystal_palace",
+                    "type": "SPACE",
+                    "label": "개최 장소"
+                }
+            ]
+        },
+        {
+            "id": "crystal_palace",
+            "title": "수정궁터 (Crystal Palace Site)",
+            "type": "SPACE",
+            "description": "1851년 세계 박람회를 위해 지어진 주철과 유리 구조물. 철골 구조 건축의 선구적 사례로, 에펠탑과 같은 철골 건축 발전에 큰 영향을 끼쳤습니다.",
+            "location": {
+                "lng": -0.1657,
+                "lat": 51.5033,
+                "height": 20
+            },
+            "camera": {
+                "heading": 90,
+                "pitch": -30,
+                "range": 600
+            },
+            "connections": [
+                {
+                    "targetId": "expo_1851",
+                    "type": "TIME",
+                    "label": "박람회장"
+                },
+                {
+                    "targetId": "paris_eiffel",
+                    "type": "SPACE",
+                    "label": "금속 건축의 영감"
+                },
+                {
+                    "targetId": "big_ben",
+                    "type": "SPACE",
+                    "label": "동시대 런던 랜드마크"
+                }
+            ]
+        },
+        {
+            "id": "big_ben",
+            "title": "빅 벤 (Big Ben / Elizabeth Tower)",
+            "type": "SPACE",
+            "description": "영국 런던 웨스트민스터 궁전 북쪽 끝에 있는 거대한 시계탑. 런던을 상징하는 세계적인 랜드마크입니다.",
+            "location": {
+                "lng": -0.1246,
+                "lat": 51.5007,
+                "height": 96
+            },
+            "camera": {
+                "heading": 45,
+                "pitch": -25,
+                "range": 600
+            },
+            "connections": [
+                {
+                    "targetId": "tower_bridge",
+                    "type": "SPACE",
+                    "label": "런던의 핵심 랜드마크"
+                },
+                {
+                    "targetId": "crystal_palace",
+                    "type": "SPACE",
+                    "label": "빅토리아 시대 건축물"
+                }
+            ]
+        },
+        {
+            "id": "tower_bridge",
+            "title": "타워 브리지 (Tower Bridge)",
+            "type": "SPACE",
+            "description": "영국 런던의 템스 강 상류에 1894년 세워진 가동교. 철판 기반에 석재를 입혀 건설되어 런던의 랜드마크가 되었습니다.",
+            "location": {
+                "lng": -0.0754,
+                "lat": 51.5055,
+                "height": 65
+            },
+            "camera": {
+                "heading": 135,
+                "pitch": -30,
+                "range": 800
+            },
+            "connections": [
+                {
+                    "targetId": "big_ben",
+                    "type": "SPACE",
+                    "label": "런던의 거대한 철조물 파트너"
+                },
+                {
+                    "targetId": "paris_eiffel",
+                    "type": "SPACE",
+                    "label": "동시대 철골 기반 랜드마크"
+                }
+            ]
+        }
+    ],
+    "startNode": "paris_eiffel"
+}
