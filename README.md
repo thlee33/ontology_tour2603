@@ -1,6 +1,6 @@
-# 시공간 온톨로지 에펠탑 스토리 투어 (Spatiotemporal Ontology Story Map)
+# 시공간 온톨로지 투어 (Spatiotemporal Ontology Tour Map)
 
-![Preview](./css/preview.png) *(미리보기 이미지를 적용할 수 있습니다)*
+![Preview](https://github.com/thlee33/ontology_tour2603/blob/main/demo.png) 
 
 이 프로젝트는 **CesiumJS**의 3D 공간 정보 라이브러리와 **네트워크 그래프(Network Graph)** UI를 결합하여, 역사적 사건과 인물, 건축물 등을 3차원 공간에서 탐험할 수 있도록 만든 프론트엔드 웹 애플리케이션입니다.
 
@@ -73,3 +73,4 @@ cesiumjs_story_tour2/
 
 ## 🔒 라이선스 (License)
 *   이 소스 코드의 활용 및 수정은 자체 권한에 따르며, 지도 렌더러와 관련된 Cesium Ion Token, Google 3D Tiles 의존성에 대한 라이선스는 각 서비스의 이용 약관을 참조 바랍니다.
+
