@@ -3,7 +3,7 @@
  */
 
 // 1. Initialize Cesium Viewer
-Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmMmYyMTg2MC05MmEzLTQ5M2ItYTRhMS02MjVlYzZlMTA3N2UiLCJpZCI6MzA1NywiaWF0IjoxNzA3OTg4NDM2fQ.ueW30N6i7eC3Byxs7v0EhZqvSBd2o6TQPoNV2FCOnxM';
+Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxZTBiMzA2OS04ZTMxLTQ1NjMtYjU5OC1lMWVlMWViZmI1MjgiLCJpZCI6MzA1NywiaWF0IjoxNzY5NTc0NzY3fQ.2t_Z8vHd3k6LbTHlxTZj76HiAHsCvsxms1lkM80nOB4';
 
 const viewer = new Cesium.Viewer('cesiumContainer', {
     timeline: false,
